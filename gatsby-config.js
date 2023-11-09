@@ -1,0 +1,13 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+module.exports = {
+  siteMetadata: {
+    title: `The Shark Fighter`,
+    siteUrl: `https://www.yourdomain.tld`,
+  },
+  plugins: [
+    "gatsby-plugin-image", 
+    "gatsby-plugin-sharp",
+  ],
+}
