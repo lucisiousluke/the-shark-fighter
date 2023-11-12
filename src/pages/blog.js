@@ -3,27 +3,33 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
+//this takes the "data" varaible created from the export below unpacks it then we map to get the value
 const BlogPage = ({ data }) => {
     return (
-        <Layout pageTitle="My Blog Posts">
-            <ul>
-                {
-                    data.allFile.nodes.map(node => (
-                        <li key={node.name}>
-                            {node.name}
-                        </li>
-                    ))
-                }
-            </ul>
+        <Layout pageTitle="My Blog Posts"> {
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Posted: {node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+          </article>
+        ))
+      }
         </Layout>
     )
 }
 
+//the takes all the info and puts it into a variable called "data"?
 export const query = graphql`
 query {
-    allFile {
+    allMdx(sort: {frontmatter: {date: DESC}}) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+        }
+        id
+        excerpt
       }
     }
   }
