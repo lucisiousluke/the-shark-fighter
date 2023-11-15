@@ -1,16 +1,15 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+ module.exports = {
   siteMetadata: {
-    title: `The Shark Fighter`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "The Shark Fighter",
   },
   plugins: [
-    "gatsby-plugin-image", 
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
@@ -18,4 +17,4 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
   ],
-}
+};
