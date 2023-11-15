@@ -6,7 +6,8 @@ import Seo from '../../components/seo'
 
 
 const BlogPost = ({ data, children }) => {
-    const image = getImage(data.mdx.frontmatter.hero_image)
+    const image = getImage (data.mdx.frontmatter.hero_image)
+
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
             <p>Posted: {data.mdx.frontmatter.date}</p>
@@ -27,20 +28,20 @@ const BlogPost = ({ data, children }) => {
 
 export const query = graphql`
 query ($id: String) {
-  mdx(id: {eq: $id}) {
-    frontmatter {
-      date(formatString: "MMMM D, YYYY")
-      title
-      hero_image_alt
-      hero_image_credit_text
-      hero_image {
-        childrenImageSharp {
-          gatsbyImageData
+    mdx(id: {eq: $id}) {
+      frontmatter {
+        date(formatString: "MMMM D, YYYY")
+        title
+        hero_image_alt
+        hero_image_credit_text
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
   }
-}
 `
 export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title}/>
 
