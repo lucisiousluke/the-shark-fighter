@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import BackToWork from '../../components/backToWork'
 
 
 const BlogPost = ({ data, children }) => {
@@ -17,11 +18,12 @@ const BlogPost = ({ data, children }) => {
             <p>
                 {/* Play with the Photo Credit line later */}
                 Photo Credit: {" "}
-                <a href={data.mdx.frontmatter.hero_image_alt}>
+                <p href={data.mdx.frontmatter.hero_image_alt}>
                     {data.mdx.frontmatter.hero_image_credit_text}
-                </a>
+                </p>
             </p>
-            {children}
+            {children}\
+            <BackToWork />
         </Layout>
     )
 }

@@ -4,7 +4,6 @@ import PrimaryNavigation from './navigation'
 import SiteFooter from './footer'
 import Seo from './seo'
 import { 
-    container,
     siteTitle
 } from '../styles/layout.module.css'
 
@@ -20,13 +19,10 @@ const Layout = ({ pageTitle, children }) => {
       }
       `)
   return (
-    <div className="mx-auto">
-        
+    <div> 
         <PrimaryNavigation />
-      <main> 
-        <h1 className="text-3xl font-bold">{pageTitle}</h1>
-        {children}
-      </main>
+        <h1 className="text-3xl font-bold siteTitle">{pageTitle}</h1>
+        {children}  
       <SiteFooter />
     </div>
   )
