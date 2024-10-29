@@ -21,8 +21,10 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div> 
         <PrimaryNavigation />
-        <h1 className="text-3xl font-bold siteTitle">{pageTitle}</h1>
-        {children}  
+        <div className='container mx-auto'>
+          <h1 className="text-3xl font-bold siteTitle">{pageTitle}</h1>
+          {children}  
+        </div>
       <SiteFooter />
     </div>
   )
