@@ -15,13 +15,6 @@
         path: `${__dirname}/portfolio`,
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/blog`,
-      }
-    },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",

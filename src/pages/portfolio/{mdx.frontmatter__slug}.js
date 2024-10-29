@@ -30,6 +30,7 @@ const PortfolioPost = ({ data, children }) => {
 export const query = graphql`
 query ($id: String) {
     mdx(id: {eq: $id}) {
+      
       frontmatter {
         date(formatString: "MMMM D, YYYY")
         title
