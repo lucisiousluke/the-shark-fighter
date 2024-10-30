@@ -10,8 +10,11 @@ const PortfolioPost = ({ data, children }) => {
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
+          <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          <h1 className="text-3xl font-bold siteTitle">{data.mdx.frontmatter.title}</h1>
+          
             <p>Posted: {data.mdx.frontmatter.date}</p>
-            <GatsbyImage image={image}
+            <GatsbyImage className="rounded-lg" image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
             />
             <p>
@@ -23,6 +26,7 @@ const PortfolioPost = ({ data, children }) => {
             </p>
             {children}
           <BackToWork />
+          </article>
         </Layout>
     )
 }

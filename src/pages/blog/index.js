@@ -6,6 +6,7 @@ import Seo from '../../components/seo'
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My work">
+      <div className='grid grid-cols-3 gap-4'>
       {
         data.allMdx.nodes.map((node) => (
             <article key={node.id}>
@@ -18,6 +19,7 @@ const BlogPage = ({ data }) => {
             </article>
         ))
       }
+      </div>
     </Layout>
   )
 }
