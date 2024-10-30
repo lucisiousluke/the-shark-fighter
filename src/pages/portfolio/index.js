@@ -9,23 +9,26 @@ const PortfolioPost = ({ data }) => {
 
   return (
     <Layout pageTitle="My work">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto">
         {data.allMdx.nodes.map((node) => {
           const portfolioThumbnail = getImage(node.frontmatter.hero_image) // Access hero_image here
-
+          const excerpt = (node.excerpt)
           return (
             <article key={node.id}>
               <div className='rounded'>
               {portfolioThumbnail && (
-                <GatsbyImage image={portfolioThumbnail} alt={node.frontmatter.title} className="rounded-lg"/>
+                <GatsbyImage image={portfolioThumbnail} alt={node.frontmatter.title} className="rounded-lg h-64 w-full object-cover"/>
               )}
               </div>
-              <h2>
-                <Link to={`/portfolio/${node.frontmatter.slug}`}>
-                  {node.frontmatter.title}
-                </Link>
-              </h2>
-              <p>Posted: {node.frontmatter.date}</p>
+              <div className="mx-5 mt-4 mb-6">
+                <h2 className="font-thin text-3xl mb-3">
+                  <Link to={`/portfolio/${node.frontmatter.slug}`}>
+                    {node.frontmatter.title}
+                  </Link>
+                </h2>
+                <p>Posted: {node.frontmatter.date}</p>
+                <p>{excerpt}</p>
+              </div>
             </article>
           )
         })}

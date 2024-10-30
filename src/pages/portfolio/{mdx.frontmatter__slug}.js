@@ -11,12 +11,11 @@ const PortfolioPost = ({ data, children }) => {
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
           <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-          <h1 className="text-3xl font-bold siteTitle">{data.mdx.frontmatter.title}</h1>
-          
-            <p>Posted: {data.mdx.frontmatter.date}</p>
+          <h1 className="text-3xl font-bold siteTitle">{data.mdx.frontmatter.title}</h1>  
             <GatsbyImage className="rounded-lg" image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
             />
+            <p>Posted: {data.mdx.frontmatter.date}</p>
             <p>
                 {/* Play with the Photo Credit line later */}
                 Photo Credit: {" "}
