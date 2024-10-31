@@ -2,8 +2,9 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { Contact } from '../components/contact-me'
+import { Contact } from '../components/contactMe'
 import { Link } from 'gatsby'
+import { BackgroundImage } from '../components/backgroundImage'
 
 // Step 2: Define your component
 const IndexPage = () => {
@@ -85,9 +86,7 @@ const IndexPage = () => {
             </div>
           </div>
           </section>
-          <section className="bg-cyan-900 rounded-xl h-80 my-20">
-            <div><h2>This is text but will be a image with anothe image over it</h2></div>
-          </section>
+          <BackgroundImage />
          <Contact />
       </Layout>
     </main>
