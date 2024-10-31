@@ -21,7 +21,7 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div> 
         <PrimaryNavigation />
-        <div className='container mx-auto'>
+        <div className='max-w-7xl mx-auto lg:px-6 md:px-3'>
           <h1 className="text-3xl font-bold siteTitle">{pageTitle}</h1>
           {children}  
         </div>

@@ -9,7 +9,7 @@ const PortfolioPost = ({ data }) => {
 
   return (
     <Layout pageTitle="My work">
-      <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto my-20">
         {data.allMdx.nodes.map((node) => {
           const portfolioThumbnail = getImage(node.frontmatter.hero_image) // Access hero_image here
           const excerpt = (node.excerpt)

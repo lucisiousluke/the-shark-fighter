@@ -8,7 +8,9 @@ const AboutPage = () => {
   return (
     <main>
     <Layout pageTitle="About Me">
-      <p>Hi there! I'm Luke Hinrichs the proud creator of this site, which I built with Gatsby.</p>  
+      <section className="my-20">
+        <p>Hi there! I'm Luke Hinrichs the proud creator of this site, which I built with Gatsby.</p>  
+      </section>
     </Layout>      
     </main>
   )
