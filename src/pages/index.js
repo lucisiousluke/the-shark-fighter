@@ -3,13 +3,13 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { Contact } from '../components/contactMe'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import BackgroundSection from '../components/backgroundImage'
 
 // Step 2: Define your component
-const IndexPage = ({ data }) => {
-  console.log('Data:', data);
-  
+const IndexPage = ({ data }) => {  
+  console.log(data)
+
   return (
     <main>
       <Layout>
@@ -88,11 +88,10 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           </section>
-          {/* {data?.backgroundImage && (
           <BackgroundSection imageData={data.backgroundImage.childImageSharp.gatsbyImageData}>
-          <h1>Welcome to My Site</h1>
-        </BackgroundSection>
-        )} */}
+            <h1>Welcome to My Site</h1>
+          </BackgroundSection>
+
          <Contact />
       </Layout>
     </main>

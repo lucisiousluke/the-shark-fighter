@@ -3,9 +3,6 @@ import {  useStaticQuery, graphql } from 'gatsby'
 import PrimaryNavigation from './navigation'
 import SiteFooter from './footer'
 import Seo from './seo'
-import { 
-    siteTitle
-} from '../styles/layout.module.css'
 
 
 const Layout = ({ pageTitle, children }) => {

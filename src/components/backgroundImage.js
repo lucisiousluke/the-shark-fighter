@@ -3,21 +3,12 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const BackgroundSection = ({ imageData, children }) => {
   const image = getImage(imageData);
-
   return (
     <div className="background-container">
       <GatsbyImage
-        image={image}
+        image={imageData} // Pass imageData directly here
         alt="Background"
-        className="background-image"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
+        className="h-96 rounded-xl"
       />
       <div className="content">{children}</div>
     </div>
