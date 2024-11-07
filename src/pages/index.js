@@ -4,10 +4,12 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { Contact } from '../components/contactMe'
 import { Link } from 'gatsby'
-import { BackgroundImage } from '../components/backgroundImage'
+import BackgroundSection from '../components/backgroundImage'
 
 // Step 2: Define your component
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  console.log('Data:', data);
+  
   return (
     <main>
       <Layout>
@@ -55,22 +57,22 @@ const IndexPage = () => {
           />
         </div>
       </section>
-      <section class="my-20 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
-        <div class="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-          <h4 class="opacity-70 text-xl">Icon+</h4>
-          <h3 class="mt-10 text-black text-2xl">UX Research</h3>
+      <section className="my-20 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
+        <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
+          <h4 className="opacity-70 text-xl">Icon+</h4>
+          <h3 className="mt-10 text-black text-2xl">UX Research</h3>
           </div>
-          <div class="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-            <h4 class="text-white opacity-70 text-xl">Icon+</h4>
-            <h3 class="mt-10 text-white text-2xl">Brand Management</h3>
+          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
+            <h4 className="text-white opacity-70 text-xl">Icon+</h4>
+            <h3 className="mt-10 text-white text-2xl">Brand Management</h3>
           </div>
-            <div class="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-              <h4 class="text-white opacity-70 text-xl">Icon+</h4>
-              <h3 class="mt-10 text-white text-2xl">Web Development</h3>
+            <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
+              <h4 className="text-white opacity-70 text-xl">Icon+</h4>
+              <h3 className="mt-10 text-white text-2xl">Web Development</h3>
             </div>
-            <div class="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-slate-300">
-              <h4 class="text-white opacity-70 text-xl">Icon+</h4>
-              <h3 class="mt-10 text-white text-2xl">UI Design</h3>
+            <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-slate-300">
+              <h4 className="text-white opacity-70 text-xl">Icon+</h4>
+              <h3 className="mt-10 text-white text-2xl">UI Design</h3>
             </div>
          </section>
         <section className="grid grid-cols-2 gap-4 my-6">
@@ -86,12 +88,28 @@ const IndexPage = () => {
             </div>
           </div>
           </section>
-          <BackgroundImage />
+          {/* {data?.backgroundImage && (
+          <BackgroundSection imageData={data.backgroundImage.childImageSharp.gatsbyImageData}>
+          <h1>Welcome to My Site</h1>
+        </BackgroundSection>
+        )} */}
          <Contact />
       </Layout>
     </main>
   )
 }
+
+
+export const query = graphql`
+  query {
+    backgroundImage: file(relativePath: { eq: "process-background.webp" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+      }
+    }
+  }
+`;
+
 
 // You'll learn about this in the next task, just copy it for now
 export const Head = () => <Seo title="Home Page" />
