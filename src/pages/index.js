@@ -88,10 +88,13 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
           </section>
+          <section className="relative w-full h-96">
           <BackgroundSection imageData={data.backgroundImage.childImageSharp.gatsbyImageData}>
-            <h1>Welcome to My Site</h1>
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-white text-4xl font-bold text-center">Welcome to My Site</h1>
+          </div>
           </BackgroundSection>
-
+          </section>
          <Contact />
       </Layout>
     </main>

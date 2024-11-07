@@ -8,7 +8,7 @@ const BackgroundSection = ({ imageData, children }) => {
       <GatsbyImage
         image={imageData} // Pass imageData directly here
         alt="Background"
-        className="relative top-0 left-0 w-full h-96 object-cover z-[-1] rounded-xl"
+        className="absolute top-0 left-0 w-full h-96 object-cover z-[-1] rounded-xl"
       />
       <div className="content">{children}</div>
     </div>
