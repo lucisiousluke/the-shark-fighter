@@ -89,10 +89,13 @@ const IndexPage = ({ data }) => {
           </div>
           </section>
           <section className="relative w-full h-96">
-          <BackgroundSection imageData={data.backgroundImage.childImageSharp.gatsbyImageData}>
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h1 className="text-white text-4xl font-bold text-center">Welcome to My Site</h1>
-          </div>
+          <BackgroundSection
+            imageData={data.backgroundImage.childImageSharp.gatsbyImageData}
+            overlayImageData={data.overlayImage?.childImageSharp?.gatsbyImageData}
+          >
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <h1 className="text-white text-4xl font-bold text-center">Welcome to My Site</h1>
+            </div>
           </BackgroundSection>
           </section>
          <Contact />
@@ -109,8 +112,14 @@ export const query = graphql`
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
     }
+    overlayImage: file(relativePath: { eq: "yellow-sticky-notes.webp" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+      }
+    }
   }
 `;
+
 
 
 // You'll learn about this in the next task, just copy it for now
