@@ -5,7 +5,7 @@ import SiteFooter from './footer'
 import Seo from './seo'
 
 
-const Layout = ({ pageTitle, children }) => {
+const HomePageLayout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
     query {
         site {
@@ -18,7 +18,6 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div> 
         <PrimaryNavigation />
-        <p>this is a default layout</p>
         <div className='max-w-7xl mx-auto lg:px-6 md:px-3'>
           <h1 className="text-3xl font-bold siteTitle">{pageTitle}</h1>
           {children}  
@@ -35,4 +34,4 @@ export const Head = () => (
  </>
  )
 
-export default Layout
+export default HomePageLayout

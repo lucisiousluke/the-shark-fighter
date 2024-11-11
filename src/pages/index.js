@@ -1,6 +1,6 @@
 // Step 1: Import React
 import * as React from 'react'
-import Layout from '../components/layout'
+import HomePageLayout from '../components/homePageLayout'
 import Seo from '../components/seo'
 import { Contact } from '../components/contactMe'
 import { Link, graphql } from 'gatsby'
@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <main>
-      <Layout>
+      <HomePageLayout>
         <section className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -99,7 +99,7 @@ const IndexPage = ({ data }) => {
           </BackgroundSection>
           </section>
          <Contact />
-      </Layout>
+      </HomePageLayout>
     </main>
   )
 }
