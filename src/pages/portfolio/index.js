@@ -3,12 +3,17 @@ import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
+import PageTitle from '../../components/pageTitle'
 
 const PortfolioPost = ({ data }) => {
   console.log(data)
 
   return (
-    <Layout pageTitle="My work">
+    <Layout>
+      <PageTitle 
+        pageTitle="My work" 
+        pageDescription="Not to bad if I do say so myself"
+      />
       <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto my-20">
         {data.allMdx.nodes.map((node) => {
           const portfolioThumbnail = getImage(node.frontmatter.hero_image) // Access hero_image here

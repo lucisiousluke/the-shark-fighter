@@ -5,7 +5,7 @@ import SiteFooter from './footer'
 import Seo from './seo'
 
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
     const data = useStaticQuery(graphql`
     query {
         site {
@@ -17,12 +17,8 @@ const Layout = ({ pageTitle, children }) => {
       `)
   return (
     <div> 
-        <PrimaryNavigation />
-        
-        <div className='max-w-7xl mx-auto lg:px-6 md:px-3 text-center'>
-          <h2 className="text-4xl font-bold text-cyan-500">this is a default layout</h2>
-          <hr className="w-48 h-2 mx-auto my-5 bg-rose-400 border-0 md:my-5 dark:bg-gray-700"></hr>
-          <h1 className="text-2xl text-center	siteTitle">{pageTitle}</h1>
+        <PrimaryNavigation />    
+        <div className='max-w-7xl mx-auto lg:px-6 md:px-3'>
           {children}  
         </div>
       <SiteFooter />

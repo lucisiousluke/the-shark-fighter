@@ -1,10 +1,15 @@
 import * as React from 'react'
 import Layout from '../components/layout'
+import PageTitle from '../components/pageTitle'
 
 const ContactPage = () => {
     return (
         <main>
-            <Layout pageTitle="Contact Me">
+            <Layout>
+                <PageTitle
+                    pageTitle="Contact Me"
+                    pageDescription="Think I can help? Reach out."
+                />
                 <section className="grid grid-cols-4 gap-4 max-w-7xl mx-auto my-20">
                     <div className="bg-cyan-900 text-white rounded-lg col-span-3 p-6">
                         <h1 className="text-3xl font-thin mb-2">Contact Me</h1>
