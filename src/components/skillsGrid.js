@@ -2,7 +2,7 @@ import React from 'react'
 
 const SkillsGrid = ({ skills }) => {
     return (
-      <section className="skills-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-6">
+      <section className="skills-grid grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 p-6 my-20">
         {skills.map((skill) => {
           console.log(skill.icon); // Log the skill icon here
           return (
