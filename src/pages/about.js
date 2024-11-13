@@ -6,6 +6,14 @@ import PageTitle from "../components/pageTitle";
 import Seo from "../components/seo";
 import SkillsGrid from "../components/skillsGrid";
 import SplitScreen from "../components/splitScreen";
+import uxResearchIcon from "../images/svg/ux-research-icon.svg"
+import artDirectionIcon from "../images/svg/art-direction-icon.svg"
+import webDesignIcon from "../images/svg/web-design-icon.svg"
+import SEO from "../images/svg/seo-icon.svg"
+import webDevelopment from "../images/svg/web-development-icon.svg"
+import brandManagement from "../images/svg/brand-management-icon.svg"
+import projectManagement from "../images/svg/project-management-icon.svg"
+import userTesting from "../images/svg/user-testing-icon.svg"
 
 
 // Step 2: Define your component
@@ -13,8 +21,8 @@ const AboutPage = ({ data }) => {
   const skills = [
     {
       id: '1',
-      icon: data.uxResearchIcon.publicURL,
-      title: 'UI Design',
+      icon: uxResearchIcon, // Now using the name of the imported SVG
+      title: 'UX Research',
       bulletPoints: [
         'Proficient in Figma and Sketch',
         'Focus on accessibility and usability',
@@ -23,7 +31,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '2',
-      icon: data.artDirectionIcon.publicURL,
+      icon: brandManagement, // Example with another skill
       title: 'Brand Management',
       bulletPoints: [
         'Builds and maintains a brand’s identity',
@@ -33,7 +41,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '3',
-      icon: data.artDirectionIcon.publicURL,
+      icon: webDesignIcon,
       title: 'Web Design',
       bulletPoints: [
         'Focuses on creating visually appealing, user-friendly interfaces.',
@@ -43,7 +51,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '4',
-      icon: data.artDirectionIcon.publicURL,
+      icon: SEO,
       title: 'SEO',
       bulletPoints: [
         'Improves a website’s structure and content.',
@@ -53,7 +61,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '5',
-      icon: data.artDirectionIcon.publicURL,
+      icon: webDevelopment,
       title: 'Web Development',
       bulletPoints: [
         'Transforms web designs into functional websites.',
@@ -63,7 +71,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '6',
-      icon: data.artDirectionIcon.publicURL,
+      icon: artDirectionIcon,
       title: 'Art Direction',
       bulletPoints: [
         ' Leads the visual concept and aesthetics.',
@@ -73,7 +81,7 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '7',
-      icon: data.artDirectionIcon.publicURL,
+      icon: projectManagement,
       title: 'Project Management',
       bulletPoints: [
         'Plans, organizes, and oversees projects ensuring timely delivery.',
@@ -83,8 +91,8 @@ const AboutPage = ({ data }) => {
     },
     {
       id: '8',
-      icon: data.artDirectionIcon.publicURL,
-      title: 'User Testing',
+      icon: userTesting,
+      title: "User Testing",
       bulletPoints: [
         'Engaged real users to test features or products.',
         'Identifies pain points, usability issues, and improvement opportunities.',
@@ -143,10 +151,10 @@ export const Head = () => (
 );
 export const query = graphql`
 query {
-  uxResearchIcon: file(relativePath: { eq: "svg/ux-research-icon.svg" }) {
+  uxResearchIcon: file(relativePath: { eq: "svg/ux_research_icon.svg" }) {
     publicURL
   }
- 	artDirectionIcon: file(relativePath: { eq: "svg/art-direction-icon.svg" }) {
+  artDirectionIcon: file(relativePath: { eq: "svg/art_direction_icon.svg" }) {
     publicURL
   }
 }

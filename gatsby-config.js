@@ -1,7 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
- module.exports = {
+module.exports = {
   siteMetadata: {
     title: "The Shark Fighter",
   },
@@ -26,7 +26,7 @@
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
-          include: /svg/, // Only include files in the svg directory
+          include: /src\/images\/svg/, // Make sure the path matches src/images/svg
         },
       },
     },
