@@ -20,6 +20,7 @@
     "gatsby-adapter-netlify": "^1.0.3",
     "gatsby-plugin-image": "^0.7.2",
     "gatsby-plugin-mdx": "^5.12.3",
+    "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",

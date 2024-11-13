@@ -1,6 +1,5 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import PrimaryNavigation from "./navigation";
 
 const SiteFooter = () => {
   return (
@@ -25,9 +24,9 @@ const SiteFooter = () => {
             <h2 className="text-2xl mb-4 text-cyan-500">Follow Me</h2>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-blue-500 hover:underline">
+                <Link href="#" className="text-blue-500 hover:underline">
                   LinkedIn
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

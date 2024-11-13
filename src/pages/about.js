@@ -1,13 +1,98 @@
 // Step 1: Import React
 import * as React from "react";
-import IconGrid from "../components/iconGrid";
+import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PageTitle from "../components/pageTitle";
 import Seo from "../components/seo";
+import SkillsGrid from "../components/skillsGrid";
 import SplitScreen from "../components/splitScreen";
 
+
 // Step 2: Define your component
-const AboutPage = () => {
+const AboutPage = ({ data }) => {
+  const skills = [
+    {
+      id: '1',
+      icon: data.uxResearchIcon.publicURL,
+      title: 'UI Design',
+      bulletPoints: [
+        'Proficient in Figma and Sketch',
+        'Focus on accessibility and usability',
+        'Experienced in responsive design',
+      ],
+    },
+    {
+      id: '2',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'Brand Management',
+      bulletPoints: [
+        'Builds and maintains a brand’s identity',
+        'Ensures consistency in messaging & customer experience',
+        'Monitors brand perception in the market',
+      ],
+    },
+    {
+      id: '3',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'Web Design',
+      bulletPoints: [
+        'Focuses on creating visually appealing, user-friendly interfaces.',
+        'Prioritizes responsive design to provide a seamless experience.',
+        'Emphasizes accessibility and usability.',
+      ],
+    },
+    {
+      id: '4',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'SEO',
+      bulletPoints: [
+        'Improves a website’s structure and content.',
+        'Optimizes technical SEO, including site speed.',
+        'Monitors performance metrics.',
+      ],
+    },
+    {
+      id: '5',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'Web Development',
+      bulletPoints: [
+        'Transforms web designs into functional websites.',
+        'Ensures website functionality across devices.',
+        'Collaborates with designers and developers.',
+      ],
+    },
+    {
+      id: '6',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'Art Direction',
+      bulletPoints: [
+        ' Leads the visual concept and aesthetics.',
+        'Guides the selection of design elements.',
+        'Work to communicate the intended message and emotion.',
+      ],
+    },
+    {
+      id: '7',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'Project Management',
+      bulletPoints: [
+        'Plans, organizes, and oversees projects ensuring timely delivery.',
+        'Coordinates cross-functional teams, keeping communication clear.',
+        'Monitors project progress, mitigates risks, and adjusts strategies.',
+      ],
+    },
+    {
+      id: '8',
+      icon: data.artDirectionIcon.publicURL,
+      title: 'User Testing',
+      bulletPoints: [
+        'Engaged real users to test features or products.',
+        'Identifies pain points, usability issues, and improvement opportunities.',
+        'Analyzes user interactions to refine the product.',
+      ],
+    },
+    // Add more skills as needed
+  ];
   return (
     <main>
       <Layout>
@@ -38,127 +123,13 @@ const AboutPage = () => {
         pageTitle="Maybe you've seen me someplace"
         pageDescription="Brands I've been apart of"
         />
-        <IconGrid />
         <PageTitle 
         pageTitle="I have a very particular set of skills"
         pageDescription="A bit of what I do"
         />
-        <div className="grid grid-cols-4 gap-20 my-20">
-          <div>
-            <h2 className="text-xl text-cyan-500">UX Research</h2>
-              <ul className="font-thin text-slate-500 leading-7">
-                <li>
-                  Analytics data research
-                </li>
-                <li>
-                  User testing focus groups
-                </li>
-                <li>
-                  Heat mapping
-                </li>
-              </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">Brand Management</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Builds and maintains a brand’s identity
-              </li>
-              <li>
-                Ensures consistency in messaging & customer
-                experience
-              </li>
-              <li>
-                Monitors brand perception in the market
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">Web Design</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Focuses on creating visually appealing, user-friendly interfaces.
-              </li>
-              <li>
-                Prioritizes responsive design to provide a seamless experience.
-              </li>
-              <li>
-                Emphasizes accessibility and usability.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">SEO</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Improves a website’s structure and content.
-              </li>
-              <li>
-                Optimizes technical SEO, including site speed.
-              </li>
-              <li>
-                Monitors performance metrics.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">Web Development</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Transforms web designs into functional websites.
-              </li>
-              <li>
-                Ensures website functionality across devices.
-              </li>
-              <li>
-                Collaborates with designers and developers.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">Art Direction</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Leads the visual concept and aesthetics.
-              </li>
-              <li>
-                Guides the selection of design elements.
-              </li>
-              <li>
-                Work to communicate the intended message and emotion.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">Project Management</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Plans, organizes, and oversees projects ensuring timely delivery.
-              </li>
-              <li>
-                Coordinates cross-functional teams, keeping communication clear.
-              </li>
-              <li>
-                Monitors project progress, mitigates risks, and adjusts
-                strategies.
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-xl text-cyan-500">User Testing</h2>
-            <ul className="font-thin text-slate-500 leading-7">
-              <li>
-                Engaged real users to test features or products.
-              </li>
-              <li>
-                Identifies pain points, usability issues, and improvement opportunities.
-              </li>
-              <li>
-                Analyzes user interactions to refine the product.
-              </li>
-            </ul>
-          </div>
-        </div>
+        <SkillsGrid 
+        skills={skills}
+        />
       </Layout>
     </main>
   );
@@ -170,6 +141,16 @@ export const Head = () => (
     <meta name="description" content="your description" />
   </>
 );
+export const query = graphql`
+query {
+  uxResearchIcon: file(relativePath: { eq: "svg/ux-research-icon.svg" }) {
+    publicURL
+  }
+ 	artDirectionIcon: file(relativePath: { eq: "svg/art-direction-icon.svg" }) {
+    publicURL
+  }
+}
+`;
 
 // Step 3: Export your component
 export default AboutPage;
