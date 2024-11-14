@@ -150,16 +150,7 @@ export const Head = () => (
     <meta name="description" content="your description" />
   </>
 );
-export const query = graphql`
-query {
-  uxResearchIcon: file(relativePath: { eq: "svg/ux_research_icon.svg" }) {
-    publicURL
-  }
-  artDirectionIcon: file(relativePath: { eq: "svg/art_direction_icon.svg" }) {
-    publicURL
-  }
-}
-`;
+
 
 // Step 3: Export your component
 export default AboutPage;

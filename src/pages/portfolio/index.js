@@ -26,13 +26,13 @@ const PortfolioPost = ({ data }) => {
               )}
               </div>
               <div className="mx-5 mt-4 mb-6">
-                <h2 className="font-thin text-3xl mb-3">
+                <h2 className="font-thin text-3xl mb-3 text-cyan-500">
                   <Link to={`/portfolio/${node.frontmatter.slug}`}>
                     {node.frontmatter.title}
                   </Link>
                 </h2>
                 <p>Posted: {node.frontmatter.date}</p>
-                <p>{excerpt}</p>
+                <p className="text-slate-500">{excerpt}</p>
               </div>
             </article>
           )
