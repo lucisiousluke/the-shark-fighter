@@ -3,6 +3,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PageTitle from "../components/pageTitle";
+import BackToWork from "../components/backToWork";
 import Seo from "../components/seo";
 import SkillsGrid from "../components/skillsGrid";
 import SplitScreen from "../components/splitScreen";
@@ -115,15 +116,14 @@ const AboutPage = ({ data }) => {
           rightContent={
             <div>
               <p className="my-3">
-                With a passion for UX/UI management and a love for tackling new
-                ideas and technologies, I thrive on pushing creative boundaries
-                both in the corporate world and beyond. Outside of work, you’ll
-                find me competing in Brazilian Jiu-Jitsu, chasing warm weather,
-                exploring new destinations, or simply enjoying anything that
-                involves a beach. I believe in balancing hard work with
-                meaningful adventures—however, I may be a Colorado Native, but
-                you'd be hard pressed to find me on a ski slope.
-              </p>
+              I’m passionate about UX/UI management and love exploring new ideas and technologies, pushing creative boundaries 
+              both in and out of the corporate world. But here’s the real story: my true passions are Brazilian Jiu-Jitsu, traveling 
+              to warm beaches, and embracing new experiences. I believe talent is valuable, but dedication drives success. I love what 
+              I do, though nothing raises my blood pressure like poor UX.</p>
+
+              <p>And as for all the wrestling photos—oh yeah, you might be wondering why! Well, let me tell you, 
+                brother—it’s not just about the intensity and charisma of the ring. I use them because I simply 
+                love the thrill and showmanship of pro wrestling. Like in life, the cream always rises to the top! Oooh yeah!</p>
             </div>
           }
         />
@@ -138,6 +138,7 @@ const AboutPage = ({ data }) => {
         <SkillsGrid 
         skills={skills}
         />
+        <BackToWork />
       </Layout>
     </main>
   );

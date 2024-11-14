@@ -5,10 +5,11 @@ import { Contact } from '../components/contactMe'
 import { Link, graphql } from 'gatsby'
 import BackgroundSection from '../components/backgroundImage'
 import Layout from '../components/layout'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 // Step 2: Define your component
 const IndexPage = ({ data }) => {  
-  console.log(data)
+  const image = getImage(data.uxPreformanceImage);
 
   return (
     <main>
@@ -75,9 +76,12 @@ const IndexPage = ({ data }) => {
               <h3 className="mt-10 text-white text-2xl">UI Design</h3>
             </div>
          </section>
-        <section className="grid grid-cols-2 gap-4 my-6">
+        <section className="grid grid-cols-2 gap-4 my-20">
           <div>
-          <h2 className="text-2xl border rounded-xl">rounded image section</h2>
+          <GatsbyImage 
+          image={image}
+          className="rounded-xl"
+          />
           </div>
           <div className="p-5 text-right">
             <h2 className="text-4xl mb-4">UX preformance</h2>
@@ -94,7 +98,6 @@ const IndexPage = ({ data }) => {
             overlayImageData={data.overlayImage?.childImageSharp?.gatsbyImageData}
           >
             <div className="absolute inset-0 flex items-center justify-center z-10">
-              <h1 className="text-white text-4xl font-bold text-center">Welcome to My Site</h1>
             </div>
           </BackgroundSection>
           </section>
@@ -106,18 +109,23 @@ const IndexPage = ({ data }) => {
 
 
 export const query = graphql`
-  query {
-    backgroundImage: file(relativePath: { eq: "process-background.webp" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-      }
-    }
-    overlayImage: file(relativePath: { eq: "yellow-sticky-notes.webp" }) {
-      childImageSharp {
-        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-      }
+query {
+  backgroundImage: file(relativePath: { eq: "process-background.webp" }) {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
     }
   }
+  overlayImage: file(relativePath: { eq: "hubble-desktop-knockout.webp" }) {
+    childImageSharp {
+      gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    }
+  }
+uxPreformanceImage: file(relativePath: { eq: "hubble-desktop.webp" }) {
+    childImageSharp {
+      gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    }
+  }
+}
 `;
 
 
