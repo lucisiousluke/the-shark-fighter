@@ -15,6 +15,7 @@ import webDevelopment from "../images/svg/web-development-icon.svg"
 import brandManagement from "../images/svg/brand-management-icon.svg"
 import projectManagement from "../images/svg/project-management-icon.svg"
 import userTesting from "../images/svg/user-testing-icon.svg"
+import LogoGrid from "../components/logoGrid";
 
 
 // Step 2: Define your component
@@ -131,6 +132,7 @@ const AboutPage = ({ data }) => {
         pageTitle="Maybe you've seen me someplace"
         pageDescription="Brands I've been apart of"
         />
+        <LogoGrid logos={data.allFile.nodes} />
         <PageTitle 
         pageTitle="I have a very particular set of skills"
         pageDescription="A bit of what I do"
@@ -150,6 +152,19 @@ export const Head = () => (
     <meta name="description" content="your description" />
   </>
 );
+
+export const query = graphql`
+query {
+  allFile(filter: {relativeDirectory: {eq: "logos/100x100"}}) {
+    nodes {
+      childImageSharp {
+        gatsbyImageData(width: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+      }
+      name
+    }
+  }
+}
+`
 
 
 // Step 3: Export your component
