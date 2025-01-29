@@ -1,18 +1,20 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+ module.exports = {
   siteMetadata: {
     title: "The Shark Fighter",
   },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-postcss",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `portfolio`,
-        path: `${__dirname}/portfolio`,
+        path: `${__dirname}/portfolio/`, // Ensure this matches your folder structure
       },
     },
     {
@@ -26,12 +28,25 @@ module.exports = {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {
-          include: /src\/images\/svg/, // Make sure the path matches src/images/svg
+          include: /src\/images\/svg/,
         },
       },
     },
-    "gatsby-plugin-mdx",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-postcss",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              withWebp: true,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },    
   ],
 };
