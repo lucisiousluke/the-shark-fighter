@@ -6,6 +6,11 @@ import { Link, graphql } from 'gatsby'
 import BackgroundSection from '../components/backgroundImage'
 import Layout from '../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import UxResearchIcon from '../images/svg/ux-research-icon.svg';
+import BrandManagementIcon from '../images/svg/brand-management-icon.svg';
+import WebDevelopmentIcon from '../images/svg/web-development-icon.svg';
+import WebDesignIcon from '../images/svg/web-design-icon.svg';
+
 
 // Step 2: Define your component
 const IndexPage = ({ data }) => {  
@@ -59,23 +64,23 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section className="my-20 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
-        <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-          <h4 className="opacity-70 text-xl">Icon+</h4>
-          <h3 className="mt-10 text-black text-2xl">UX Research</h3>
+          <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
+            <UxResearchIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+            <h3 className="mt-10 text-black text-2xl">UX Research</h3>
           </div>
           <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-            <h4 className="text-white opacity-70 text-xl">Icon+</h4>
+            <BrandManagementIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
             <h3 className="mt-10 text-white text-2xl">Brand Management</h3>
           </div>
-            <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-              <h4 className="text-white opacity-70 text-xl">Icon+</h4>
-              <h3 className="mt-10 text-white text-2xl">Web Development</h3>
-            </div>
-            <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-slate-300">
-              <h4 className="text-white opacity-70 text-xl">Icon+</h4>
-              <h3 className="mt-10 text-white text-2xl">UI Design</h3>
-            </div>
-         </section>
+          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
+            <WebDevelopmentIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+            <h3 className="mt-10 text-white text-2xl">Web Development</h3>
+          </div>
+          <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-slate-300">
+            <WebDesignIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+            <h3 className="mt-10 text-white text-2xl">UI Design</h3>
+          </div>
+        </section>
         <section className="grid grid-cols-2 gap-4 my-20">
           <div>
           <GatsbyImage 
