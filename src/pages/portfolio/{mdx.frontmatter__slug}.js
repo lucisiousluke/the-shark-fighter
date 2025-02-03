@@ -27,7 +27,7 @@ const PortfolioPost = ({ data, children }) => {
 
             {image && (
               <GatsbyImage
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full h-full"
                 image={image}
                 alt={mdx.frontmatter.hero_image_alt}
               />

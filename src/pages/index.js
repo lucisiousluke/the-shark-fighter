@@ -25,7 +25,9 @@ const IndexPage = ({ data }) => {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] 
+-translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#06b6d4] to-[#06b6d4] 
+opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -34,7 +36,7 @@ const IndexPage = ({ data }) => {
         </div>
         <div className="max-w-2xl py-20 sm:py-20 lg:py-20">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-cyan-500 sm:text-6xl">
               UX experience to enrich your online business
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -55,7 +57,7 @@ const IndexPage = ({ data }) => {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#06b6d4] to-[#06b6d4] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -64,20 +66,20 @@ const IndexPage = ({ data }) => {
         </div>
       </section>
       <section className="my-20 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
-          <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-            <UxResearchIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
-            <h3 className="mt-10 text-black text-2xl">UX Research</h3>
+          <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
+            <UxResearchIcon className="w-20 h-20 fill-white mx-auto" />
+            <h3 className="mt-10 text-white text-2xl">UX Research</h3>
           </div>
-          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-            <BrandManagementIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
+            <BrandManagementIcon className="w-20 h-20 fill-white mx-auto" />
             <h3 className="mt-10 text-white text-2xl">Brand Management</h3>
           </div>
-          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-slate-300">
-            <WebDevelopmentIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
+            <WebDevelopmentIcon className="w-20 h-20 fill-white mx-auto" />
             <h3 className="mt-10 text-white text-2xl">Web Development</h3>
           </div>
-          <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-slate-300">
-            <WebDesignIcon className="w-20 h-20 fill-cyan-500 mx-auto" />
+          <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-cyan-700">
+            <WebDesignIcon className="w-20 h-20 fill-white mx-auto" />
             <h3 className="mt-10 text-white text-2xl">UI Design</h3>
           </div>
         </section>
