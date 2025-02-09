@@ -19,7 +19,7 @@ const PortfolioPost = ({ data, children }) => {
             h1: (props) => <h1 className="text-3xl font-bold text-cyan-500" {...props} />,
             h2: (props) => <h2 className="text-3xl font-thin font-semibold mt-8 mb-4 text-cyan-500" {...props} />,
             h3: (props) => <h3 className="text-xl font-thin mt-4" {...props} />,
-            p: (props) => <p className="font-thin mt-4 text-base/8" {...props} />,
+            p: (props) => <p className="font-thin text-base/8" {...props} />,
             ul: (props) => <ul className="font-thin list-disc list-inside mb-4" {...props} />,  // Ensures list styling
             li: (props) => <li className="mt-2" {...props} />
           }}
