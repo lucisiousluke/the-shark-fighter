@@ -1,15 +1,23 @@
 import React from "react";
 
-const ProjectSection = ({ children, twoColumn, bgColor = "bg-white", leftSide = false }) => {
+const ProjectSection = ({ 
+  children, 
+  twoColumn, 
+  fiftyFifty, 
+  bgColor = "bg-white", 
+  leftSide = false 
+}) => {
   return (
     <section className={`${bgColor} py-12`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className={`grid ${twoColumn ? "md:grid-cols-3" : ""} gap-6 items-start`}>
+        <div className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${fiftyFifty ? "md:grid-cols-2" : ""} gap-6 items-start`}>
           {React.Children.map(children, (child, index) => {
-            // When twoColumn is true, divide the layout into 3 equal parts
+            // 50/50 Layout
+            if (fiftyFifty) {
+              return <div className="md:col-span-1">{child}</div>;
+            }
+            // Two-Column Layout (1/3 + 2/3 with leftSide control)
             if (twoColumn) {
-              // If leftSide is true, the first child takes 2/3, the second takes 1/3 on the left
-              // If leftSide is false, the first child takes 1/3 on the left, the second takes 2/3
               const isFirstChild = index === 0;
               const childClass = leftSide
                 ? isFirstChild
