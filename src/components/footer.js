@@ -7,12 +7,12 @@ const SiteFooter = () => {
       <div class="mx-auto border-t border-gray-300 text-center">
         <div className="grid grid-cols-1 md:grid-cols-2 border-gray-300 md:border-l divide-gray-300 leading-7 font-extralight">
           <div className="py-10 border-b md:border-b-0 md:border-r">
-            <h2 className="text-2xl mb-4 text-cyan-500">Contact</h2>
+            <h2 className="text-2xl mb-4 text-slate-500">Contact</h2>
             <p>Luke Hinrichs</p>
             <p>
               <Link
                 href="mailto:luke.hinrichs@gmail.com"
-                className="text-blue-500 hover:underline"
+                className="text-cyan-500 hover:underline"
               >
                 luke.hinrichs@gmail.com
               </Link>
@@ -21,10 +21,10 @@ const SiteFooter = () => {
             <p>Denver, CO</p>
           </div>
           <div className="py-10">
-            <h2 className="text-2xl mb-4 text-cyan-500">Follow Me</h2>
+            <h2 className="text-2xl mb-4 text-slate-500">Follow Me</h2>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-blue-500 hover:underline">
+                <Link href="#" className="text-cyan-500 hover:underline">
                   LinkedIn
                 </Link>
               </li>

@@ -16,8 +16,8 @@ const PortfolioPost = ({ data, children }) => {
         <MDXProvider 
           components={{ 
             Image, 
-            h1: (props) => <h1 className="text-3xl font-bold text-cyan-500" {...props} />,
-            h2: (props) => <h2 className="text-3xl font-thin font-semibold mt-8 mb-4 text-cyan-500" {...props} />,
+            h1: (props) => <h1 className="max-w-7xl mx-auto text-4xl font-bold text-cyan-500" {...props} />,
+            h2: (props) => <h2 className="text-3xl font-thin font-semibold mb-4 text-cyan-500" {...props} />,
             h3: (props) => <h3 className="text-xl font-thin mt-4" {...props} />,
             p: (props) => <p className="font-thin text-base/8" {...props} />,
             ul: (props) => <ul className="font-thin ml-4 list-disc mb-4" {...props} />,  // Ensures list styling
@@ -25,10 +25,9 @@ const PortfolioPost = ({ data, children }) => {
           }}
         >
           <article className="prose prose-lg dark:prose-invert mx-auto">
-            <h1 className="text-3xl font-bold">{mdx.frontmatter.title}</h1>
             {image && (
               <GatsbyImage
-                className="rounded-lg shadow-lg w-full h-full"
+                className="rounded-lg shadow-lg"
                 image={image}
                 alt={mdx.frontmatter.hero_image_alt}
               />

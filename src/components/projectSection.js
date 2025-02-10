@@ -8,9 +8,9 @@ const ProjectSection = ({
   leftSide = false 
 }) => {
   return (
-    <section className={`${bgColor} py-12`}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${fiftyFifty ? "md:grid-cols-2" : ""} gap-6 items-start`}>
+    <section className={`${bgColor} py-20`}>
+      <div className="max-w-7xl mx-auto">
+        <div className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${fiftyFifty ? "md:grid-cols-2" : ""} gap-x-6 items-start`}>
           {React.Children.map(children, (child, index) => {
             // 50/50 Layout
             if (fiftyFifty) {

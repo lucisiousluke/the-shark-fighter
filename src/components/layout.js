@@ -18,7 +18,7 @@ const Layout = ({ children, maxWidth = "max-w-7xl" }) => {
   return (
     <div>
       <PrimaryNavigation />
-      <div className={`${maxWidth} mx-auto lg:px-6 md:px-3`}>{children}</div>
+      <div className={`${maxWidth} mx-auto`}>{children}</div>
       <SiteFooter />
     </div>
   );
