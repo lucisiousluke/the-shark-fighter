@@ -18,7 +18,7 @@ const PortfolioPost = ({ data, children }) => {
           Image,
           h1: (props) => (
             <h1
-              className="max-w-7xl mx-auto text-4xl font-bold text-cyan-500"
+              className="max-w-7xl pt-20 mx-auto text-4xl font-bold text-cyan-500"
               {...props}
             />
           ),
@@ -48,13 +48,6 @@ const PortfolioPost = ({ data, children }) => {
               </div>
             </div>
           )}
-          <p className="text-gray-600 text-sm">
-            Posted: {mdx.frontmatter.date}
-          </p>
-          <p className="text-gray-500 italic">
-            Photo Credit: {mdx.frontmatter.hero_image_credit_text}
-          </p>
-
           <div className="mt-6">{children}</div>
 
           <BackToWork />
