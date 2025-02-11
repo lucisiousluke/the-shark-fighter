@@ -10,6 +10,7 @@ import Image from "../../components/images";
 const PortfolioPost = ({ data, children }) => {
   const { mdx } = data;
   const image = getImage(data.mdx.frontmatter.hero_image);
+  const heroImage = getImage(mdx.frontmatter.hero_image_thumbnail);
 
   return (
     <Layout maxWidth="max-w-none" pageTitle={mdx.frontmatter.title}>
@@ -39,10 +40,10 @@ const PortfolioPost = ({ data, children }) => {
         <article className="prose prose-lg dark:prose-invert mx-auto">
           {image && (
             <div className="bg-slate-50 max-h-[800px] flex justify-center items-center">
-              <div className="max-w-5xl py-12 mx-auto w-full h-full">
+              <div className="w-full h-full">
                 <GatsbyImage
-                  className="rounded-lg shadow-lg max-h-[600px] w-auto h-auto max-w-full object-contain"
-                  image={image}
+                  className="max-h-[650px] w-auto h-auto max-w-full object-cover object-[center_10%]"
+                  image={heroImage}
                   alt={mdx.frontmatter.hero_image_alt}
                 />
               </div>
@@ -65,6 +66,11 @@ export const query = graphql`
         title
         hero_image_alt
         hero_image_credit_text
+        hero_image_thumbnail {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
         hero_image {
           childImageSharp {
             gatsbyImageData
