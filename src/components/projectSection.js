@@ -1,16 +1,21 @@
 import React from "react";
 
-const ProjectSection = ({ 
-  children, 
-  twoColumn, 
-  fiftyFifty, 
-  bgColor = "bg-white", 
-  leftSide = false 
+const ProjectSection = ({
+  children,
+  twoColumn,
+  fiftyFifty,
+  bgColor = "bg-white",
+  leftSide = false,
+  extraClasses = "", // Add extraClasses to props with a default value
 }) => {
   return (
     <section className={`${bgColor} py-20`}>
-      <div className="max-w-7xl mx-auto">
-        <div className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${fiftyFifty ? "md:grid-cols-2" : ""} gap-x-6 items-start`}>
+      <div className={`max-w-7xl mx-auto ${extraClasses} flex justify-center`}>
+        <div
+          className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${
+            fiftyFifty ? "md:grid-cols-2" : ""
+          } gap-x-6 items-start`}
+        >
           {React.Children.map(children, (child, index) => {
             // 50/50 Layout
             if (fiftyFifty) {
