@@ -2,39 +2,39 @@ import React from "react";
 
 const ProjectSection = ({
   children,
-  twoColumn,
-  fiftyFifty,
+  oneThirdTwoThird = false, // Renamed for clarity
+  fiftyFifty = false,
   bgColor = "bg-white",
   leftSide = false,
-  extraClasses = "", // Add extraClasses to props with a default value
+  extraClasses = "",
 }) => {
   return (
     <section className={`${bgColor} py-20`}>
       <div className={`max-w-7xl mx-auto ${extraClasses} flex justify-center`}>
         <div
-          className={`grid ${twoColumn ? "md:grid-cols-3" : ""} ${
+          className={`grid gap-x-6 items-start ${
             fiftyFifty ? "md:grid-cols-2" : ""
-          } gap-x-6 items-start`}
+          } ${oneThirdTwoThird ? "md:grid-cols-3" : "md:grid-cols-1"}`}
         >
           {React.Children.map(children, (child, index) => {
-            // 50/50 Layout
             if (fiftyFifty) {
               return <div className="md:col-span-1">{child}</div>;
             }
-            // Two-Column Layout (1/3 + 2/3 with leftSide control)
-            if (twoColumn) {
+
+            if (oneThirdTwoThird) {
               const isFirstChild = index === 0;
               const childClass = leftSide
                 ? isFirstChild
-                  ? "md:col-span-2" // First child takes 2/3 on the left side
-                  : "md:col-span-1" // Second child takes 1/3 on the right side
+                  ? "md:col-span-2" // 2/3 on the left
+                  : "md:col-span-1" // 1/3 on the right
                 : isFirstChild
-                ? "md:col-span-1" // First child takes 1/3 on the left side
-                : "md:col-span-2"; // Second child takes 2/3 on the right side
+                ? "md:col-span-1" // 1/3 on the left
+                : "md:col-span-2"; // 2/3 on the right
 
               return <div className={childClass}>{child}</div>;
             }
-            return <div className="w-full">{child}</div>; // Default layout for single column
+
+            return <div className="w-full">{child}</div>;
           })}
         </div>
       </div>
