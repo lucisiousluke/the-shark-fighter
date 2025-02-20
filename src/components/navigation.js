@@ -10,7 +10,6 @@ const PrimaryNavigation = () => {
                     <StaticImage className="object-scale-down h-35 w-40" alt="The Shark Fighter Logo" src="../images/The-Shark-Fighter-logo.png"/>
                 </Link>
                 <div className="flex text-sm lg:gap-x-12">
-                    <Link className="font-semibold" to="/blog">Blog</Link>
                     <Link className='font-semibold' to='/portfolio'>Portfolio</Link>
                     <Link className="font-semibold" to="/about">About</Link>
                     <Link className='font-semibold' to="/contact">Contact</Link>
