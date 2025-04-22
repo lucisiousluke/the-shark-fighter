@@ -158,7 +158,7 @@ query {
   allFile(filter: {relativeDirectory: {eq: "logos/100x100"}}) {
     nodes {
       childImageSharp {
-        gatsbyImageData(width: 100, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+        gatsbyImageData(width: 100, placeholder: BLURRED, formats: [AUTO, WEBP])
       }
       name
     }
