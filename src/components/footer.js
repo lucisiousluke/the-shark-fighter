@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import SocialMediaIcons from "./SocialMediaIcons";
 
 const SiteFooter = () => {
   return (
@@ -22,13 +23,7 @@ const SiteFooter = () => {
           </div>
           <div className="py-10">
             <h2 className="text-2xl mb-4 text-slate-500">Follow Me</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="text-cyan-500 hover:underline">
-                  LinkedIn
-                </Link>
-              </li>
-            </ul>
+                <SocialMediaIcons />
           </div>
         </div>
       </div>
