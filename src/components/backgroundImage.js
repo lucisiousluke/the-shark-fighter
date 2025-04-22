@@ -16,7 +16,7 @@ const BackgroundSection = ({ imageData, overlayImageData, children }) => {
         <GatsbyImage
           image={overlayImageData}
           alt="Overlay"
-          className={"absolute top-[-80px] right-[150px] w-[425px] h-auto object-contain z-10"}
+          className="absolute -top-20 right-36 md:right-48 w-[425px] max-w-full h-auto object-contain z-10"
         />
       )}
 
