@@ -124,7 +124,7 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
 
 export const query = graphql`
   query {
-    backgroundImage: file(relativePath: { eq: "yellow-sticky-notes.webp" }) {
+    backgroundImage: file(relativePath: { eq: "google-analytics.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
