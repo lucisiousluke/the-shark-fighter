@@ -1,12 +1,18 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx,mdx}", // make sure this matches your file structure
+    "./src/**/*.{js,jsx,ts,tsx,mdx}",
+  ],
+  safelist: [
+    'top-[-80px]',
+    'right-[150px]',
+    'w-[425px]',
+    'z-10',
   ],
   theme: {
     extend: {},
   },
   corePlugins: {
-    textTransform: true,  // Explicitly enable textTransform utilities
+    textTransform: true,
   },
   plugins: [],
 }
