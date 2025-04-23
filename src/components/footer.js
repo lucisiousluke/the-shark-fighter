@@ -29,7 +29,7 @@ const SiteFooter = () => {
       </div>
 
       <section className="mx-auto text-white font-extralight bg-cyan-500 py-3 ">
-        <div className="container">
+        <div className="container mx-auto px-4 text-center">
           <p>Copywrite 2023 The Shark Fighter</p>
         </div>
       </section>
