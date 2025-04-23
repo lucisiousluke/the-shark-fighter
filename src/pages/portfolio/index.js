@@ -31,7 +31,7 @@ const PortfolioPost = ({ data }) => {
                     {node.frontmatter.title}
                   </Link>
                 </h2>
-                <p>Posted: {node.frontmatter.date}</p>
+                <p className="font-thin text-slate-500">Posted: {node.frontmatter.date}</p>
                 <p className="text-slate-500">{excerpt}</p>
               </div>
             </article>
