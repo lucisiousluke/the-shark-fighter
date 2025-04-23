@@ -134,7 +134,7 @@ export const query = graphql`
         gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
-    uxPreformanceImage: file(relativePath: { eq: "hubble-desktop.webp" }) {
+    uxPreformanceImage: file(relativePath: { eq: "bio-techne-desktop.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
