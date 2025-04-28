@@ -1,4 +1,5 @@
 import React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 
 export const Contact = () => {
     return (
@@ -19,7 +20,18 @@ export const Contact = () => {
                     <p>Denver, Co</p>
                 </div>
             </div>
-            <div className="rounded-lg">Column 2</div>
+            <div className="rounded-lg overflow-hidden">
+                <StaticImage
+                    src="../images/black-shirt-beach-photo.jpg"
+                    alt="Photo of Luke Hinrichs"
+                    className="rounded-lg"
+                    placeholder="blurred"
+                    layout="constrained"
+                    width={400}
+                    height={280}
+                />
+            </div>
+
         </section>
 
     )

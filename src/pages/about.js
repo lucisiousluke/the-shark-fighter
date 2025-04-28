@@ -7,6 +7,7 @@ import BackToWork from "../components/backToWork";
 import Seo from "../components/seo";
 import SkillsGrid from "../components/skillsGrid";
 import SplitScreen from "../components/splitScreen";
+import { StaticImage } from "gatsby-plugin-image";
 import uxResearchIcon from "../images/svg/ux-research-icon.svg"
 import artDirectionIcon from "../images/svg/art-direction-icon.svg"
 import webDesignIcon from "../images/svg/web-design-icon.svg"
@@ -112,7 +113,17 @@ const AboutPage = ({ data }) => {
         />
         <SplitScreen
           leftContent={
-            <p>Custom content for the left side, specific to the About page.</p>
+            <div className="rounded-lg overflow-hidden text-center lg:text-right">
+            <StaticImage
+                src="../images/black-shirt-beach-photo.jpg"
+                alt="Photo of Luke Hinrichs"
+                className="rounded-lg"
+                placeholder="blurred"
+                layout="constrained"
+                width={400}
+                height={425}
+            />
+        </div>
           }
           rightContent={
             <div>
