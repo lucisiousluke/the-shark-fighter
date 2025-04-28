@@ -24,7 +24,7 @@ const BackgroundSection = ({ imageData, overlayImageData, children }) => {
             zIndex: 10,
             objectFit: 'contain',
           }}
-          className="rounded-xl"
+          className="hidden lg:block"
         />
       )}
 

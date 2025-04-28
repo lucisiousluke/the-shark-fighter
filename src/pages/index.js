@@ -64,35 +64,40 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             />
           </div>
         </section>
-        <section className="my-20 flex flex-row justify-space xxs:flex-col xs:flex-col sm:flex-row content-center justify-center align-middle text-center">
-          <div className="w-1/3 bg-gradient-to-r from-pink to-purple p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
-            <UxResearchIcon className="w-20 h-20 fill-white mx-auto" />
-            <h3 className="mt-10 text-white text-2xl">UX Research</h3>
-          </div>
-          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
-            <BrandManagementIcon className="w-20 h-20 fill-white mx-auto" />
-            <h3 className="mt-10 text-white text-2xl">Brand Management</h3>
-          </div>
-          <div className="w-1/3 bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xs:w-full sm:w-1/3 bg-cyan-700">
-            <WebDevelopmentIcon className="w-20 h-20 fill-white mx-auto" />
-            <h3 className="mt-10 text-white text-2xl">Web Development</h3>
-          </div>
-          <div className="lg:rounded-xl lg:w-1/3 lg:bg-dp bg-dp p-8 rounded-xl my-5 mx-5 xxs:w-full xxs:bg-dp xxs:rounded-xl xs:w-full xs:bg-dp xs:rounded-xl sm:hidden md:hidden lg:block bg-cyan-700">
-            <WebDesignIcon className="w-20 h-20 fill-white mx-auto" />
-            <h3 className="mt-10 text-white text-2xl">UI Design</h3>
+        <section>
+          <div className="flex flex-wrap gap-8 justify-center">
+            <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
+              <UxResearchIcon className="w-20 h-20 fill-white mx-auto" />
+              <h3 className="mt-10 text-white text-2xl text-center">UX Research</h3>
+            </div>
+
+            <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
+              <BrandManagementIcon className="w-20 h-20 fill-white mx-auto" />
+              <h3 className="mt-10 text-white text-2xl text-center">Brand Management</h3>
+            </div>
+
+            <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
+              <WebDevelopmentIcon className="w-20 h-20 fill-white mx-auto" />
+              <h3 className="mt-10 text-white text-2xl text-center">Web Development</h3>
+            </div>
+
+            <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
+              <WebDesignIcon className="w-20 h-20 fill-white mx-auto" />
+              <h3 className="mt-10 text-white text-2xl text-center">UI Design</h3>
+            </div>
           </div>
         </section>
-        <section className="grid grid-cols-2 gap-4 my-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
           <div>
             <GatsbyImage image={image} className="rounded-xl" />
           </div>
           <div className="p-5 text-right">
-            <h2 className="text-4xl mb-4">UX preformance</h2>
+            <h2 className="text-4xl mb-4">UX performance</h2>
             <p className="text-5xl font-extrabold text-cyan-500 mb-4">
               Time to enrich your business' identity
             </p>
             <p className="font-thin text-base/8">
-            creating intuitive, user-friendly experiences that drive engagement and customer satisfaction. Through research, usability testing, and data-driven design, I identify pain points and optimize workflows to streamline interactions.
+              Creating intuitive, user-friendly experiences that drive engagement and customer satisfaction. Through research, usability testing, and data-driven design, I identify pain points and optimize workflows to streamline interactions.
             </p>
             <div className="mt-6">
               <Link
