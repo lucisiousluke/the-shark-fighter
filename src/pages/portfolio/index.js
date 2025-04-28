@@ -31,7 +31,6 @@ const PortfolioPost = ({ data }) => {
                     {node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="font-thin text-slate-500">Posted: {node.frontmatter.date}</p>
                 <p className="text-slate-500">{excerpt}</p>
               </div>
             </article>
@@ -44,23 +43,23 @@ const PortfolioPost = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
-      nodes {
-        frontmatter {
-          date(formatString: "MMMM D, YYYY")
-          title
-          slug
-          hero_image {
-            childImageSharp {
-              gatsbyImageData
-            }
+  allMdx(sort: { frontmatter: { sortOrder: DESC } }) {
+    nodes {
+      frontmatter {
+        sortOrder
+        title
+        slug
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
           }
         }
-        id
-        excerpt
       }
+      id
+      excerpt
     }
   }
+}
 `
 
 export const Head = () => <Seo title="My Blog Posts" />

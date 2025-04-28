@@ -26,11 +26,10 @@ const BlogPage = ({ data }) => {
 
 //exporting this query creates something called data, data can be unpacked to show things inside of the query (see the BlogPage function above)
 export const query = graphql`
-query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+  query {
+    allMdx(sort: { frontmatter: { title: ASC } }) {
       nodes {
         frontmatter {
-          date(formatString: "MMMM D, YYYY")
           title
           slug
         }
@@ -39,7 +38,8 @@ query {
       }
     }
   }
-    `
+`
+
 
 export const Head = () => <Seo title="My Blog Posts" />
 

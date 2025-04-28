@@ -5,24 +5,25 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 import BackToWork from '../../components/backToWork'
 
-
 const BlogPost = ({ data, children }) => {
-    const image = getImage (data.mdx.frontmatter.hero_image)
+    const image = getImage(data.mdx.frontmatter.hero_image)
 
     return (
         <Layout pageTitle={data.mdx.frontmatter.title}>
-            <p>Posted: {data.mdx.frontmatter.date}</p>
-            <GatsbyImage image={image}
-            alt={data.mdx.frontmatter.hero_image_alt}
-            />
-            <p>
-                {/* Play with the Photo Credit line later */}
-                Photo Credit: {" "}
-                <p href={data.mdx.frontmatter.hero_image_alt}>
-                    {data.mdx.frontmatter.hero_image_credit_text}
-                </p>
-            </p>
-            {children}\
+            {image && (
+                <GatsbyImage
+                    image={image}
+                    alt={data.mdx.frontmatter.hero_image_alt}
+                    className="my-8"
+                />
+            )}
+            <div className="text-sm text-gray-500 mb-8">
+                Photo Credit:{' '}
+                {data.mdx.frontmatter.hero_image_credit_text}
+            </div>
+            <div className="prose dark:prose-invert">
+                {children}
+            </div>
             <BackToWork />
         </Layout>
     )
@@ -32,7 +33,6 @@ export const query = graphql`
 query ($id: String) {
     mdx(id: {eq: $id}) {
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
         title
         hero_image_alt
         hero_image_credit_text
@@ -43,8 +43,9 @@ query ($id: String) {
         }
       }
     }
-  }
+}
 `
+
 export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title}/>
 
 export default BlogPost
