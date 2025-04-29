@@ -34,14 +34,13 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             />
           </div>
           <div className="max-w-2xl py-20 sm:py-20 lg:py-20">
-            <div>
               <h1 className="text-4xl font-bold tracking-tight text-cyan-500 sm:text-6xl">
                 UX experience to enrich your online business
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 See how I can help grow your brand *This site is still under construction, please excuse any development issues*
               </p>
-              <div className="mt-10 flex items-center gap-x-6">
+              <div className="mt-10">
                 <Link
                   to="/portfolio"
                   className="rounded-md border-solid border-2 border-rose-500 px-3.5 py-2.5 text-sm font-semibold text-rose-500 shadow-sm hover:bg-rose-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -50,7 +49,6 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                 </Link>
               </div>
             </div>
-          </div>
           <div
             className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
             aria-hidden="true"
