@@ -7,6 +7,8 @@ module.exports = {
     'right-[150px]',
     'w-[425px]',
     'z-10',
+    'hidden',
+    'lg:block',
   ],
   theme: {
     extend: {},
