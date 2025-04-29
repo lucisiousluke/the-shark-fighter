@@ -2,7 +2,6 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const BackgroundSection = ({ imageData, overlayImageData, children }) => {
-  console.log("OverlayImageData:", overlayImageData);
   return (
     <div className="background-container relative overflow-visible">
       {/* First (background) image */}
