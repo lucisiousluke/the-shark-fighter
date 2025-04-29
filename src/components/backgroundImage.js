@@ -24,7 +24,7 @@ const BackgroundSection = ({ imageData, overlayImageData, children }) => {
             zIndex: 10,
             objectFit: 'contain',
           }}
-          className="hidden lg:block"
+          className="!hidden lg:!block"
         />
       )}
 
