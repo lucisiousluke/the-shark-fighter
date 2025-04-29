@@ -91,7 +91,7 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           <div>
             <GatsbyImage image={image} className="rounded-xl" />
           </div>
-          <div className="p-5 text-right">
+          <div className="p-5 text-center md:text-right">
             <h2 className="text-4xl mb-4">UX performance</h2>
             <p className="text-5xl font-extrabold text-cyan-500 mb-4">
               Time to enrich your business' identity
