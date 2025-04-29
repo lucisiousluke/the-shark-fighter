@@ -4,9 +4,9 @@ import { StaticImage } from 'gatsby-plugin-image'
 export const Contact = () => {
     return (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
-            <div className="text-right">
+            <div className="md:text-right text-center">
                 <h2 className="text-3xl pb-6 text-cyan-500">Interested in working together?</h2>
-                <hr className="border-4 border-rose-400 w-48 mb-6 ml-auto"></hr>
+                <hr className="border-4 border-rose-400 w-48 mb-6 mx-auto md:ml-auto md:mr-0"></hr>
                 <div className="mb-4">
                     <h3 className="font-bold text-cyan-500">Phone number</h3>
                     <a className="hover:underline" href="tel:3033969904">303-396-9904</a>
@@ -20,7 +20,7 @@ export const Contact = () => {
                     <p>Denver, Co</p>
                 </div>
             </div>
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-lg overflow-hidden lg:text-left text-center">
                 <StaticImage
                     src="../images/black-shirt-beach-photo.jpg"
                     alt="Photo of Luke Hinrichs"
@@ -31,7 +31,6 @@ export const Contact = () => {
                     height={280}
                 />
             </div>
-
         </section>
 
     )
