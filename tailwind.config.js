@@ -3,12 +3,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx,mdx}",
   ],
   safelist: [
-    'top-[-80px]',
-    'right-[150px]',
-    'w-[425px]',
+    {
+      pattern: /^(top|right|w)-\[.*\]$/,
+    },
+    {
+      pattern: /^(hidden|block)$/,
+      variants: ['lg'],
+    },
     'z-10',
-    'hidden',
-    'lg:block',
   ],
   theme: {
     extend: {},
@@ -17,4 +19,4 @@ module.exports = {
     textTransform: true,
   },
   plugins: [],
-}
+};
