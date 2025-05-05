@@ -3,7 +3,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 export const Contact = () => {
     return (
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 my-20">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 my-20">
             <div className="md:text-right text-center">
                 <h2 className="text-3xl pb-6 text-cyan-500">Interested in working together?</h2>
                 <hr className="border-4 border-rose-400 w-48 mb-6 mx-auto md:ml-auto md:mr-0"></hr>
@@ -22,13 +22,13 @@ export const Contact = () => {
             </div>
             <div className="rounded-lg overflow-hidden lg:text-left text-center">
                 <StaticImage
-                    src="../images/black-shirt-beach-photo.jpg"
+                    src="../images/smiling-headshot.jpg"
                     alt="Photo of Luke Hinrichs"
                     className="rounded-lg"
                     placeholder="blurred"
                     layout="constrained"
-                    width={400}
-                    height={280}
+                    width={300}
+                    height={350}
                 />
             </div>
         </section>
