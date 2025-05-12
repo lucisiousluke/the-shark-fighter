@@ -38,7 +38,7 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                 UX experience to enrich your online business
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                See how I can help grow your brand *This site is still under construction, please excuse any development issues*
+                Lets see how I can help you expand your brand.
               </p>
               <div className="mt-10">
                 <Link
