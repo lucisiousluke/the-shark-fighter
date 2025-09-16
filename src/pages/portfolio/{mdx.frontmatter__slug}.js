@@ -6,11 +6,12 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import BackToWork from "../../components/backToWork";
 import Image from "../../components/images";
+import Lightbox from "../../components/lightBox";
 
 const PortfolioPost = ({ data, children }) => {
   const { mdx } = data;
-  const image = getImage(data.mdx.frontmatter.hero_image);
   const heroImage = getImage(mdx.frontmatter.hero_image_thumbnail);
+  const galleryImages = mdx.frontmatter.gallery_images || [];
 
   return (
     <Layout maxWidth="max-w-none" pageTitle={mdx.frontmatter.title}>
@@ -33,12 +34,12 @@ const PortfolioPost = ({ data, children }) => {
           p: (props) => <p className="font-thin text-base/8" {...props} />,
           ul: (props) => (
             <ul className="font-thin ml-4 list-disc mb-4" {...props} />
-          ), // Ensures list styling
+          ),
           li: (props) => <li className="mt-2" {...props} />,
         }}
       >
         <article className="prose prose-lg dark:prose-invert mx-auto">
-          {image && (
+          {heroImage && (
             <div className="bg-slate-50 max-h-[800px] flex justify-center items-center">
               <div className="w-full h-full">
                 <GatsbyImage
@@ -49,7 +50,11 @@ const PortfolioPost = ({ data, children }) => {
               </div>
             </div>
           )}
+
           <div className="mt-6">{children}</div>
+
+          {/* Lightbox Gallery */}
+          {galleryImages.length > 0 && <Lightbox images={galleryImages} />}
 
           <BackToWork />
         </article>
@@ -63,22 +68,31 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
-        hero_image_alt
-        hero_image_credit_text
-        hero_image_thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
         hero_image {
           childImageSharp {
-            gatsbyImageData
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
+        hero_image_thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+          }
+        }
+        hero_image_alt
+        gallery_images {
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+            }
+          }
+          alt
+        }
       }
+      body
     }
   }
 `;
+
 export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />;
 
 export default PortfolioPost;

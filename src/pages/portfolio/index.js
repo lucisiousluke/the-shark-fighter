@@ -27,9 +27,12 @@ const PortfolioPost = ({ data }) => {
               </div>
               <div className="mx-5 mt-4 mb-6">
                 <h2 className="font-thin text-3xl mb-1 text-cyan-500">
-                  <Link to={`/portfolio/${node.frontmatter.slug}`}>
-                    {node.frontmatter.title}
-                  </Link>
+                  <Link
+  to={`/portfolio/${node.frontmatter.slug}`}
+  state={{ galleryImages: node.frontmatter.gallery_images }}
+>
+  {node.frontmatter.title}
+</Link>
                 </h2>
                 <p className="text-slate-500">{excerpt}</p>
               </div>
