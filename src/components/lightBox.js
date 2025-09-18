@@ -46,18 +46,26 @@ const Modal = ({ image, onClose, onPrev, onNext }) => {
         &#8592;
       </button>
 
-      {/* Image Wrapper */}
-      <div className="flex items-center justify-center max-w-5xl max-h-[80vh] w-full h-full px-4">
+      {/* Image + Caption wrapper */}
+      <div className="flex flex-col items-center justify-center max-w-5xl max-h-[85vh] w-full h-full px-4">
+        {/* Image */}
         <GatsbyImage
           image={img}
           alt={image.alt}
-          className="w-auto h-auto max-w-full max-h-[80vh]"
+          className="w-auto h-auto max-w-full max-h-[70vh]"
           imgStyle={{
-            objectFit: "contain", // keep full image, no crop
+            objectFit: "contain",
             width: "100%",
             height: "100%",
           }}
         />
+
+        {/* Caption */}
+        {image.alt && (
+          <p className="mt-4 text-gray-200 text-sm text-center px-2">
+            {image.alt}
+          </p>
+        )}
       </div>
 
       {/* Next */}
