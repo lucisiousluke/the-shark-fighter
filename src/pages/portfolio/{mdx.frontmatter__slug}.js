@@ -6,12 +6,26 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import BackToWork from "../../components/backToWork";
 import Image from "../../components/images";
-import Lightbox from "../../components/lightBox";
+
+// Import the new Lightbox
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const PortfolioPost = ({ data, children }) => {
   const { mdx } = data;
   const heroImage = getImage(mdx.frontmatter.hero_image_thumbnail);
-  const galleryImages = mdx.frontmatter.gallery_images || [];
+
+  // Convert MDX gallery images into Lightbox format
+  const galleryImages = (mdx.frontmatter.gallery_images || []).map(
+    (img) => ({
+      src: img.image.childImageSharp.gatsbyImageData.images.fallback.src,
+      alt: img.alt || ""
+    })
+  );
+
+  // State for Lightbox
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   return (
     <Layout maxWidth="max-w-none" pageTitle={mdx.frontmatter.title}>
@@ -54,7 +68,31 @@ const PortfolioPost = ({ data, children }) => {
           <div className="mt-6">{children}</div>
 
           {/* Lightbox Gallery */}
-          {galleryImages.length > 0 && <Lightbox images={galleryImages} />}
+          {galleryImages.length > 0 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+              {galleryImages.map((img, index) => (
+                <div key={index} className="cursor-pointer" onClick={() => {
+                  setCurrentIndex(index);
+                  setIsOpen(true);
+                }}>
+                  <GatsbyImage
+                    image={getImage(mdx.frontmatter.gallery_images[index].image)}
+                    alt={img.alt}
+                    className="rounded-lg object-cover w-full h-40"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {isOpen && (
+            <Lightbox
+              open={isOpen}
+              index={currentIndex}
+              slides={galleryImages}
+              onClose={() => setIsOpen(false)}
+            />
+          )}
 
           <BackToWork />
         </article>
