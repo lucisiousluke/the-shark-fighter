@@ -5,11 +5,11 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PageTitle from "../../components/pageTitle";
 import Lightbox from "../../components/lightBox"; 
-const PortfolioPost = ({ data }) => {
+
+const PortfolioIndex = ({ data }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [photoIndex, setPhotoIndex] = React.useState(0);
 
-  // Collect all hero_image URLs for lightbox
   const images = data.allMdx.nodes.map(
     (node) => node.frontmatter.hero_image.publicURL
   );
@@ -23,8 +23,6 @@ const PortfolioPost = ({ data }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto my-20">
         {data.allMdx.nodes.map((node, index) => {
           const portfolioThumbnail = getImage(node.frontmatter.hero_image);
-          const excerpt = node.excerpt;
-
           return (
             <article key={node.id}>
               <div
@@ -51,7 +49,6 @@ const PortfolioPost = ({ data }) => {
                     {node.frontmatter.title}
                   </Link>
                 </h2>
-                <p className="text-slate-500">{excerpt}</p>
               </div>
             </article>
           );
@@ -97,6 +94,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="My Blog Posts" />;
+export const Head = () => <Seo title="My Portfolio" />;
 
-export default PortfolioPost;
+export default PortfolioIndex;
