@@ -12,7 +12,7 @@ const PortfolioPost = ({ data }) => {
     <Layout>
       <PageTitle
         pageTitle="My work"
-        pageDescription="Not to bad if I do say so myself"
+        pageDescription="Not too bad if I do say so myself"
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto my-20">
         {data.allMdx.nodes.map((node) => {
