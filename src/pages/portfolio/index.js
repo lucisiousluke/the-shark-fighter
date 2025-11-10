@@ -4,8 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import PageTitle from "../../components/pageTitle";
-import "react-image-lightbox/style.css";
-
+import Lightbox from "../../components/lightBox"; 
 const PortfolioPost = ({ data }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [photoIndex, setPhotoIndex] = React.useState(0);
@@ -14,10 +13,6 @@ const PortfolioPost = ({ data }) => {
   const images = data.allMdx.nodes.map(
     (node) => node.frontmatter.hero_image.publicURL
   );
-
-  // Lazy-load Lightbox only in the browser
-  const Lightbox =
-    typeof window !== "undefined" ? require("react-image-lightbox") : null;
 
   return (
     <Layout>
@@ -50,11 +45,11 @@ const PortfolioPost = ({ data }) => {
               <div className="mx-5 mt-4 mb-6">
                 <h2 className="font-thin text-3xl mb-1 text-cyan-500">
                   <Link
-  to={`/portfolio/${node.frontmatter.slug}`}
-  state={{ galleryImages: node.frontmatter.gallery_images }}
->
-  {node.frontmatter.title}
-</Link>
+                    to={`/portfolio/${node.frontmatter.slug}`}
+                    state={{ galleryImages: node.frontmatter.gallery_images }}
+                  >
+                    {node.frontmatter.title}
+                  </Link>
                 </h2>
                 <p className="text-slate-500">{excerpt}</p>
               </div>
@@ -62,19 +57,17 @@ const PortfolioPost = ({ data }) => {
           );
         })}
 
-        {isOpen && Lightbox && (
+        {isOpen && (
           <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => setIsOpen(false)}
-            onMovePrevRequest={() =>
+            images={images}
+            currentIndex={photoIndex}
+            onClose={() => setIsOpen(false)}
+            onPrev={() =>
               setPhotoIndex((photoIndex + images.length - 1) % images.length)
             }
-            onMoveNextRequest={() =>
+            onNext={() =>
               setPhotoIndex((photoIndex + 1) % images.length)
             }
-            imageCaption={data.allMdx.nodes[photoIndex].frontmatter.title}
           />
         )}
       </div>
