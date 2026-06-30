@@ -1,3 +1,7 @@
+require(`dotenv`).config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -31,6 +35,15 @@
         rule: {
           include: /src\/images\/svg/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET || `production`,
+        token: process.env.SANITY_TOKEN,
+        watchMode: process.env.NODE_ENV === `development`,
       },
     },
     {

@@ -16,7 +16,10 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",
+    "@portabletext/react": "^6.2.0",
+    "@sanity/image-url": "^2.1.1",
     "autoprefixer": "^10.x.x",
+    "dotenv": "^17.4.2",
     "gatsby": "^5.14.3",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-mdx": "^5.14.1",
@@ -26,6 +29,7 @@
     "gatsby-plugin-sharp": "^5.14.0",
     "gatsby-remark-images": "^7.14.0",
     "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-source-sanity": "^7.9.2",
     "gatsby-transformer-sharp": "^5.15.0",
     "postcss": "^8.x.x",
     "react": "^18.2.0",
