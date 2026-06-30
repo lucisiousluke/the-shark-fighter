@@ -33,12 +33,12 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
               }}
             />
           </div>
-          <div className="max-w-2xl py-20 sm:py-20 lg:py-20">
+          <div className="max-w-[60rem] py-20 sm:py-20 lg:py-20">
               <h1 className="text-4xl font-bold tracking-tight text-cyan-500 sm:text-6xl">
-                UX experience to enrich your online business
+                Building enterprise digital experiences that solve complex problems.
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lets see how I can help you expand your brand.
+                I help organizations align user needs with business goals by building collaborative design processes, scalable systems, and high-performing digital products.
               </p>
               <div className="mt-10">
                 <Link
@@ -66,22 +66,22 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           <div className="flex flex-wrap gap-8 justify-center">
             <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
               <UxResearchIcon className="w-20 h-20 fill-white mx-auto" />
-              <h3 className="mt-10 text-white text-2xl text-center">UX Research</h3>
+              <h3 className="mt-10 text-white text-2xl text-center">UX Strategy</h3>
             </div>
 
             <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
               <BrandManagementIcon className="w-20 h-20 fill-white mx-auto" />
-              <h3 className="mt-10 text-white text-2xl text-center">Brand Management</h3>
+              <h3 className="mt-10 text-white text-2xl text-center">Cross-Functional Leadership</h3>
             </div>
 
             <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
               <WebDevelopmentIcon className="w-20 h-20 fill-white mx-auto" />
-              <h3 className="mt-10 text-white text-2xl text-center">Web Development</h3>
+              <h3 className="mt-10 text-white text-2xl text-center">Product Strategy</h3>
             </div>
 
             <div className="w-full sm:w-1/2 lg:w-1/5 p-5 bg-gradient-to-r from-cyan-400 via-cyan-500 to-pink-500 bg-[length:200%_100%] bg-[position:left_center] rounded-xl min-h-40">
               <WebDesignIcon className="w-20 h-20 fill-white mx-auto" />
-              <h3 className="mt-10 text-white text-2xl text-center">UI Design</h3>
+              <h3 className="mt-10 text-white text-2xl text-center">Design Systems</h3>
             </div>
           </div>
         </section>
@@ -90,12 +90,12 @@ opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
             <GatsbyImage image={image} className="rounded-xl" />
           </div>
           <div className="p-5 text-center md:text-right">
-            <h2 className="text-4xl mb-4">UX performance</h2>
+            <h2 className="text-4xl mb-4">UX Leadership</h2>
             <p className="text-5xl font-extrabold text-cyan-500 mb-4">
-              Time to enrich your business' identity
+              Aligning people, products, and business goals.
             </p>
             <p className="font-thin text-base/8">
-              Creating intuitive, user-friendly experiences that drive engagement and customer satisfaction. Through research, usability testing, and data-driven design, I identify pain points and optimize workflows to streamline interactions.
+              Great user experiences are the result of strong collaboration, not just great design. I partner with stakeholders, product teams, designers, and developers to define strategy, prioritize initiatives, and deliver digital experiences that create measurable value for both users and the business.
             </p>
             <div className="mt-6">
               <Link

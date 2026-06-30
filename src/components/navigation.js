@@ -11,7 +11,9 @@ const PrimaryNavigation = () => {
         {/* Logo */}
         <Link to="/">
         <StaticImage
-            className="object-scale-down h-[140px] w-[160px]"  // Custom size matching your old h-35 w-40
+            className="h-[140px] w-[160px]"
+            imgClassName="object-contain"
+            objectFit="contain"
             alt="The Shark Fighter Logo"
             src="../images/The-Shark-Fighter-logo.png"
         />
