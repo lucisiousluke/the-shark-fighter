@@ -10,7 +10,7 @@ const ProjectSection = ({
 }) => {
   return (
     <section className={`${bgColor} py-20`}>
-      <div className={`max-w-7xl mx-auto ${extraClasses} flex justify-center`}>
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${extraClasses} flex justify-center`}>
         <div
           className={`grid gap-x-6 items-start ${
             fiftyFifty ? "md:grid-cols-2" : ""

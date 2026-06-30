@@ -31,7 +31,7 @@ const PortfolioPost = ({ data, children }) => {
           Image,
           h1: (props) => (
             <h1
-              className="max-w-7xl pt-20 mx-auto text-4xl font-bold text-cyan-500"
+              className="max-w-7xl pt-20 mx-auto px-4 sm:px-6 lg:px-8 text-4xl font-bold text-cyan-500"
               {...props}
             />
           ),
@@ -68,7 +68,7 @@ const PortfolioPost = ({ data, children }) => {
 
           {/* Gallery Thumbnails */}
           {gallerySlides.length > 0 && (
-            <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
               {gallerySlides.map((img, index) => (
                 <div
                   key={index}
