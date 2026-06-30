@@ -9,7 +9,7 @@ const PortfolioIndex = ({ data }) => {
   return (
     <Layout>
       <PageTitle
-        pageTitle="My work"
+        pageTitle="UX Leadership in Action"
         pageDescription="Not too bad if I do say so myself"
       />
 
