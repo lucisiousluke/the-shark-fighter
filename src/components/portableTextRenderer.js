@@ -1,6 +1,7 @@
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
+import Accordion from "./accordion";
 
 const builder = imageUrlBuilder({
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
@@ -30,6 +31,9 @@ const components = {
         alt={value.alt || ""}
         className="w-full rounded-lg mb-6"
       />
+    ),
+    accordion: ({ value }) => (
+      <Accordion title={value.title} body={value.body} />
     ),
   },
 };

@@ -72,7 +72,7 @@ export default defineType({
       name: 'sections',
       title: 'Sections',
       type: 'array',
-      of: [{type: 'projectSection'}],
+      of: [{type: 'projectSection'}, {type: 'accordionGroup'}],
     }),
   ],
   preview: {

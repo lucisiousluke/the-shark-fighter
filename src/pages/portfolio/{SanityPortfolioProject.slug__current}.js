@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import BackToWork from "../../components/backToWork";
 import SanityProjectSection from "../../components/sanityProjectSection";
+import AccordionGroup from "../../components/accordionGroup";
 
 // Lightbox
 import Lightbox from "yet-another-react-lightbox";
@@ -38,15 +39,21 @@ const SanityPortfolioPost = ({ data }) => {
           </div>
         )}
 
-        <h1 className="max-w-7xl pt-20 mx-auto px-4 sm:px-6 lg:px-8 text-4xl font-bold text-cyan-500">
-          {project.pageHeading || project.title}
-        </h1>
-
         {/* Sections */}
         <div className="mt-6">
-          {(project.sections || []).map((section, index) => (
-            <SanityProjectSection key={section._key || index} section={section} />
-          ))}
+          {(project._rawSections || []).map((section, index) => {
+            const heading = index === 0 ? (project.pageHeading || project.title) : undefined;
+            if (section._type === "accordionGroup") {
+              return <AccordionGroup key={section._key || index} section={section} heading={heading} />;
+            }
+            return (
+              <SanityProjectSection
+                key={section._key || index}
+                section={section}
+                heading={heading}
+              />
+            );
+          })}
         </div>
 
         {/* Gallery Thumbnails */}
@@ -108,13 +115,7 @@ export const query = graphql`
           }
         }
       }
-      sections {
-        _key
-        layout
-        background
-        centered
-        _rawColumns(resolveReferences: { maxDepth: 5 })
-      }
+      _rawSections(resolveReferences: { maxDepth: 5 })
     }
   }
 `;

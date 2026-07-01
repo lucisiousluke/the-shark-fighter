@@ -7,9 +7,15 @@ const ProjectSection = ({
   bgColor = "bg-white",
   leftSide = false,
   extraClasses = "",
+  heading,
 }) => {
   return (
     <section className={`${bgColor} py-20`}>
+      {heading && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          <h1 className="text-4xl font-bold text-cyan-500">{heading}</h1>
+        </div>
+      )}
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${extraClasses} flex justify-center`}>
         <div
           className={`grid gap-x-6 items-start ${
